@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1",
+    "message": "I love learning backend development!",
+    "hearts": 5,
+    "createdAt": "2026-02-01T10:30:00Z"
+  },
+  {
+    "id": "2",
+    "message": "Coffee and code make me happy",
+    "hearts": 12,
+    "createdAt": "2026-02-02T11:00:00Z"
+  },
+  {
+    "id": "3",
+    "message": "Finally understanding Express.js!",
+    "hearts": 8,
+    "createdAt": "2026-02-03T14:20:00Z"
+  },
+  {
+    "id": "4",
+    "message": "Building APIs is actually fun",
+    "hearts": 3,
+    "createdAt": "2026-02-04T09:15:00Z"
+  }
+]
