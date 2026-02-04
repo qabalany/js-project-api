@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Happy Thoughts API</title>
+    <style>
+        body { font-family: Arial; max-width: 600px; margin: 50px auto; }
+        input { width: 100%; padding: 10px; margin: 10px 0; }
+        button { padding: 10px 20px; background: #4CAF50; color: white; border: none; cursor: pointer; }
+        #result { margin-top: 20px; padding: 10px; background: #f0f0f0; }
+    </style>
+</head>
+<body>
+    <h1>🌟 Happy Thoughts API Test</h1>
+    
+    <h2>Add New Thought</h2>
+    <input type="text" id="message" placeholder="Enter your happy thought (5-140 characters)">
+    <button onclick="addThought()">Add Thought</button>
+    
+    <div id="result"></div>
+    
+    <script>
+        async function addThought() {
+            const message = document.getElementById('message').value;
+            const result = document.getElementById('result');
+            
+            try {
+                const response = await fetch('http://localhost:8080/thoughts', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message })
+                });
+                
+                const data = await response.json();
+                result.innerHTML = '<h3>✅ Success!</h3><pre>' + JSON.stringify(data, null, 2) + '</pre>';
+                document.getElementById('message').value = '';
+            } catch (error) {
+                result.innerHTML = '<h3>❌ Error!</h3><p>' + error.message + '</p>';
+            }
+        }
+    </script>
+</body>
+</html>
